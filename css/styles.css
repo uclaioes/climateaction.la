@@ -1,0 +1,2249 @@
+@charset "UTF-8";
+/*----------------------------------------------*\
+RESET
+\*----------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, font, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+figure {
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  font-weight: normal;
+  text-align: left;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: "" "";
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+img {
+  border: 0 none;
+  height: auto;
+  max-width: 100%;
+}
+
+a img {
+  border: 0;
+}
+
+button {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.screen-reader-text {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+.clear:before,
+.clear:after {
+  content: "";
+  display: table;
+}
+
+.clear:after {
+  clear: both;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+@font-face {
+  font-family: "fontello";
+  src: url("/fonts/fontello/font/fontello.eot?25535128");
+  src: url("/fonts/fontello/font/fontello.eot?25535128#iefix") format("embedded-opentype"), url("/fonts/fontello/font/fontello.woff?25535128") format("woff"), url("/fonts/fontello/font/fontello.ttf?25535128") format("truetype"), url("/fonts/fontello/font/fontello.svg?25535128#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^=icon-]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-location:before {
+  content: "!";
+} /* '!' */
+.icon-cancel-circled:before {
+  content: "#";
+} /* '#' */
+.icon-mail-alt:before {
+  content: "$";
+} /* '$' */
+.icon-mail:before {
+  content: "%";
+} /* '%' */
+.icon-mail-1:before {
+  content: "&";
+} /* '&' */
+.icon-down-open:before {
+  content: "\e800";
+} /* '' */
+.icon-cancel:before {
+  content: "\e801";
+} /* '' */
+.icon-facebook:before {
+  content: "\e802";
+} /* '' */
+.icon-twitter:before {
+  content: "\e803";
+} /* '' */
+.icon-left-open:before {
+  content: "\e804";
+} /* '' */
+.icon-search:before {
+  content: "\e805";
+} /* '' */
+.icon-menu:before {
+  content: "\e806";
+} /* '' */
+.icon-right-dir:before {
+  content: "\e807";
+} /* '' */
+.icon-down-dir-1:before {
+  content: "\e808";
+} /* '' */
+.icon-right-open-1:before {
+  content: "\e809";
+} /* '' */
+.icon-down-open-1:before {
+  content: "\e80a";
+} /* '' */
+.icon-calendar:before {
+  content: "\e80d";
+} /* '' */
+.icon-star:before {
+  content: "\e80e";
+} /* '' */
+.icon-doc-inv:before {
+  content: "\e80f";
+} /* '' */
+.icon-left-open-1:before {
+  content: "\e810";
+} /* '' */
+.icon-link-ext-alt:before {
+  content: "\e811";
+} /* '' */
+.icon-right-open:before {
+  content: "\e812";
+} /* '' */
+.icon-download:before {
+  content: "\e813";
+} /* '' */
+/*----------------------------------------------*\
+GLOBAL
+\*----------------------------------------------*/
+body {
+  position: relative;
+}
+
+/* 
+ *
+ * Navigation Content
+------------------------------------------------*/
+.site-header,
+.site-footer {
+  background-color: #231f20;
+  font-family: "Roboto", sans-serif;
+  padding: 0 1em;
+  text-align: center;
+}
+
+@media (min-width: 37.5em) {
+  .site-header,
+  .site-footer {
+    text-align: left;
+  }
+}
+@media (min-width: 50em) {
+  .site-header,
+  .site-footer {
+    padding: 0 3em 0 3em;
+  }
+}
+@media (min-width: 68.75em) {
+  .site-header,
+  .site-footer {
+    padding: 0 5em 0 9.25em;
+  }
+}
+.site-header {
+  /* hide when not opened */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.site-footer {
+  padding-top: 6em;
+  padding-bottom: 1em;
+}
+
+.site-title {
+  margin: 2em 0;
+}
+
+@media (min-width: 37.5em) {
+  .site-title {
+    margin: 4em 0 3em;
+  }
+}
+.site-title a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+@media (min-width: 37.5em) {
+  .site-title a {
+    font-size: 0.85em;
+  }
+}
+.site-title a:hover {
+  opacity: 1;
+}
+
+.main-navigation {
+  padding-bottom: 0.75em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1.5em;
+  max-width: 75em;
+}
+
+@media (min-width: 37.5em) {
+  .main-navigation {
+    padding-bottom: 3em;
+    margin-bottom: 3em;
+  }
+}
+.main-navigation ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media (min-width: 37.5em) {
+  .main-navigation ul {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+.main-navigation li {
+  position: relative;
+  width: 33.33%;
+  margin-bottom: 1.25em;
+}
+
+@media (min-width: 37.5em) {
+  .main-navigation li {
+    width: auto;
+    margin-bottom: 1em;
+  }
+}
+.main-navigation li:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  height: 3em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  pointer-events: none;
+  /* so link works */
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+@media (min-width: 50em) {
+  .main-navigation li:before {
+    height: 5.5em;
+  }
+}
+@media (min-width: 37.5em) {
+  .main-navigation li:hover:before {
+    -webkit-transform: scale(1.075);
+    -ms-transform: scale(1.075);
+    transform: scale(1.075);
+  }
+}
+.main-navigation .energy:before {
+  background-image: url(/img/logo-color-energy.svg);
+}
+
+.main-navigation .energy a {
+  color: #f6ad2c;
+}
+
+.main-navigation li.transportation:before {
+  background-image: url(/img/logo-color-transportation.svg);
+}
+
+.main-navigation li.transportation a {
+  color: #8b929b;
+}
+
+.main-navigation li.water:before {
+  background-image: url(/img/logo-color-water.svg);
+}
+
+.main-navigation li.water a {
+  color: #2ea3d5;
+}
+
+.main-navigation li.public-health:before {
+  background-image: url(/img/logo-color-public-health.svg);
+}
+
+.main-navigation li.public-health a {
+  color: #e75757;
+}
+
+.main-navigation li.ocean-and-coastal-resources:before {
+  background-image: url(/img/logo-color-ocean-and-coastal-resources.svg);
+}
+
+.main-navigation li.ocean-and-coastal-resources a {
+  color: #2db0b7;
+}
+
+.main-navigation a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9em;
+  padding-top: 3.5em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  text-align: center;
+}
+
+@media (min-width: 50em) {
+  .main-navigation a {
+    font-size: 1.1em;
+    padding-top: 6em;
+  }
+}
+/* .main-navigation */
+.secondary-navigation {
+  margin-bottom: 4em;
+}
+
+.secondary-navigation li {
+  padding: 0.5em 0;
+}
+
+.secondary-navigation a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  padding: 0.25em 0;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  font-weight: bold;
+}
+
+.secondary-navigation a:hover {
+  opacity: 1;
+}
+
+.secondary-navigation .menu {
+  -webkit-columns: 2 auto;
+  -moz-columns: 2 auto;
+  columns: 2 auto;
+  max-width: 32em;
+}
+
+.secondary-navigation .menu li {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* 
+ *
+ * Navigation Icon
+------------------------------------------------*/
+.nav-icon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  position: absolute;
+  top: 0.825em;
+  right: 2em;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.5em 0.75em;
+  transition: border-color 0.3s;
+}
+
+@media (min-width: 37.5em) {
+  .nav-icon {
+    top: 2.25em;
+    padding: 0.5em 1em;
+  }
+}
+@media (min-width: 50em) {
+  .nav-icon {
+    top: 4em;
+  }
+}
+.nav-icon:hover {
+  border-color: #fff;
+}
+
+.nav-icon__line {
+  display: block;
+  background-color: #fff;
+  height: 0.25em;
+  margin: 0.25em 0;
+  width: 1.5em;
+  transition: opacity 0.2s ease 0.3s, margin 0.2s ease 0.3s, -webkit-transform 0.2s ease 0.3s;
+  transition: opacity 0.2s ease 0.3s, margin 0.2s ease 0.3s, transform 0.2s ease 0.3s;
+  transition: opacity 0.2s ease 0.3s, margin 0.2s ease 0.3s, transform 0.2s ease 0.3s, -webkit-transform 0.2s ease 0.3s;
+}
+
+.nav-icon__label {
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+  display: none;
+  max-width: 5em;
+  transition: max-width 0.3s ease 0.2s, opacity 0.3s ease 0.2s;
+}
+
+@media (min-width: 37.5em) {
+  .nav-icon__label {
+    display: block;
+    margin-left: 0.5em;
+  }
+}
+/* Open menu */
+.nav--is-open .site-header {
+  max-height: 40em;
+  position: relative;
+  /* for repositioning of the nav icon */
+}
+
+.nav--is-open .nav-icon {
+  outline: 0;
+  top: auto;
+  bottom: 2em;
+  padding: 0.75em;
+}
+
+.nav--is-open .nav-icon::-moz-focus-inner {
+  border: 0;
+}
+
+.nav--is-open .nav-icon__line:first-child {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.nav--is-open .nav-icon__line:last-child {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: -1em;
+}
+
+.nav--is-open .nav-icon__line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav--is-open .nav-icon__label {
+  margin-left: 0;
+  max-width: 0;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  transition: none;
+}
+
+/* 
+ *
+ * Footer
+------------------------------------------------*/
+.site-footer {
+  position: relative;
+}
+
+.footer__credit {
+  max-width: 16em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 37.5em) {
+  .footer__credit {
+    margin-right: 0;
+  }
+}
+@media (min-width: 46.875em) {
+  .footer__credit {
+    /* 750px */
+    position: absolute;
+    right: 2em;
+    bottom: 2em;
+  }
+}
+@media (min-width: 50em) {
+  .footer__credit {
+    right: 3em;
+  }
+}
+@media (min-width: 68.75em) {
+  .footer__credit {
+    right: 5em;
+  }
+}
+.footer__credit__image-wrapper {
+  text-align: center;
+}
+
+@media (min-width: 37.5em) {
+  .footer__credit__image-wrapper {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+.footer__credit__image-wrapper a {
+  max-width: 12em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 37.5em) {
+  .footer__credit__image-wrapper a:first-child {
+    margin-right: 1em;
+  }
+}
+.footer__credit p {
+  font-size: 0.7em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1em;
+}
+
+.footer__credit p a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ------------------------------------------------*/
+/* 
+ *
+ * 1./  Homepage
+------------------------------------------------*/
+.home {
+  background-color: #000;
+  color: #fff;
+}
+
+.homepage__title {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80vh;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+@media (max-height: 22.5em) {
+  .homepage__title {
+    /* 360px */
+    padding-top: 4em;
+    padding-bottom: 2em;
+  }
+}
+@media (min-width: 37.5em) {
+  .homepage__title {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+@media (min-width: 50em) {
+  .homepage__title {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+.homepage__logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40em;
+}
+
+.homepage__text-wrapper,
+.climate__text-wrapper {
+  max-width: 55em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homepage__text-wrapper p,
+.climate__text-wrapper p {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  line-height: 1.4;
+}
+
+@media (min-width: 37.5em) {
+  .homepage__text-wrapper p,
+  .climate__text-wrapper p {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 50em) {
+  .homepage__text-wrapper p,
+  .climate__text-wrapper p {
+    font-size: 1.75em;
+  }
+}
+.homepage__bg-images {
+  position: relative;
+  height: 80vh;
+  position: relative;
+}
+
+.homepage__bg-images:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 70%, #000 100%);
+  z-index: 10;
+}
+
+.homepage__bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Hide a few things from the Climate Page when included on the homepage */
+.home .post-90 .section__header {
+  display: none;
+}
+
+.home .post-90 .climate__intro {
+  display: none;
+}
+
+/* 
+ *
+ * 2./  Climate Impacts
+------------------------------------------------*/
+.climate-impacts-in-la {
+  background-color: #000;
+  color: #fff;
+}
+
+.climate__intro,
+.climate__key-fact-wrapper {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.climate__intro {
+  min-height: 32em;
+  position: relative;
+}
+
+@media (min-width: 50em) {
+  .climate__intro {
+    min-height: 46em;
+  }
+}
+.climate__intro:before {
+  content: "";
+  width: 100%;
+  height: 20em;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, #000 100%);
+}
+
+.climate__text-wrapper {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  position: relative;
+}
+
+.climate__key-facts-wrapper {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25em;
+}
+
+@media (min-width: 37.5em) {
+  .climate__key-facts-wrapper {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 50em) {
+  .climate__key-facts-wrapper {
+    font-size: 1.75em;
+  }
+}
+.climate__key-facts-title {
+  border-bottom: 5px solid #fff;
+  display: inline-block;
+  padding-bottom: 0.25em;
+  margin-top: 2em;
+}
+
+.climate__key-fact-wrapper {
+  height: 90vh;
+  max-height: 30em;
+  width: 100%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-position: center center;
+}
+
+.climate__key-fact-1 {
+  position: relative;
+}
+
+.climate__key-fact-1:before {
+  content: "";
+  width: 100%;
+  height: 6em;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(to bottom, #000 0%, transparent 100%);
+}
+
+.climate__key-fact {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 36em;
+}
+
+.climate__key-fact p {
+  text-shadow: 0 0 15px #000;
+}
+
+.climate__key-fact-number {
+  display: block;
+  height: 2em;
+  width: 2em;
+  line-height: 1.6;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+  border: 3px solid #9ea7b2;
+  background-color: rgba(0, 0, 0, 0.25);
+  margin-bottom: 1em;
+}
+
+.climate__graph {
+  padding-top: 2em;
+}
+
+.climate__graph-text {
+  text-align: center;
+}
+
+.climate__graph-text p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  line-height: 1.4;
+}
+
+@media (min-width: 37.5em) {
+  .climate__graph-text p {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 50em) {
+  .climate__graph-text p {
+    font-size: 1.75em;
+  }
+}
+.climate__graph-image {
+  margin: 1em 2em 6em 2em;
+}
+
+@media (min-width: 50em) {
+  .climate__graph-image {
+    max-width: 56em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* 
+ *
+ * 3./  Section
+------------------------------------------------*/
+.section-padding {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+}
+
+@media (min-width: 37.5em) {
+  .section-padding {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    padding-bottom: 1.75em;
+  }
+}
+@media (min-width: 50em) {
+  .section-padding {
+    padding-top: 3.25em;
+    padding-bottom: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+.section__header {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  /* Colors */
+}
+
+.energy .section__header {
+  background-color: #f6ad2c;
+}
+
+.transportation .section__header {
+  background-color: #8b929b;
+}
+
+.water .section__header {
+  background-color: #2ea3d5;
+}
+
+.public-health .section__header {
+  background-color: #e75757;
+}
+
+.ocean-and-coastal-resources .section__header {
+  background-color: #2db0b7;
+}
+
+.climate-impacts-in-la .section__header {
+  background-color: #3e3d3f;
+}
+
+.section__title {
+  font-size: 1.5em;
+  position: relative;
+  margin-right: 5rem;
+}
+
+@media (min-width: 37.5em) {
+  .section__title {
+    font-size: 2.5em;
+    margin-right: 9.5rem;
+  }
+}
+@media (min-width: 50em) {
+  .section__title {
+    font-size: 3.5em;
+  }
+}
+.transportation .section__title {
+  font-size: 1.25em;
+}
+
+@media (min-width: 25em) {
+  .transportation .section__title {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 37.5em) {
+  .transportation .section__title {
+    font-size: 2.5em;
+  }
+}
+@media (min-width: 50em) {
+  .transportation .section__title {
+    font-size: 3.5em;
+  }
+}
+.page-template-section .section__title {
+  padding-left: 1.5em;
+  /* make room for icon on section pages */
+}
+
+.section__icon {
+  width: 1.25em;
+  height: 1.25em;
+  position: absolute;
+  left: 0;
+}
+
+.section__icon img {
+  max-width: none;
+}
+
+.section__banner {
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.section__content {
+  font-family: "Roboto", sans-serif;
+}
+
+.section__intro-text {
+  color: #fff;
+  line-height: 1.5;
+  /* Colors */
+}
+
+@media (min-width: 37.5em) {
+  .section__intro-text p {
+    font-size: 1.25em;
+  }
+}
+@media (min-width: 50em) {
+  .section__intro-text p {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 68.75em) {
+  .section__intro-text p {
+    font-size: 1.75em;
+  }
+}
+.energy .section__intro-text {
+  background-color: #af6601;
+}
+
+.transportation .section__intro-text {
+  background-color: #46515e;
+}
+
+.water .section__intro-text {
+  background-color: #096788;
+}
+
+.public-health .section__intro-text {
+  background-color: #7e2323;
+}
+
+.ocean-and-coastal-resources .section__intro-text {
+  background-color: #185d60;
+}
+
+.section__inner-wrapper {
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__banner img {
+  display: block;
+}
+
+.section__summary {
+  /* Colors */
+}
+
+.section__summary p {
+  margin-bottom: 1em;
+  font-size: 1.125em;
+  line-height: 1.5;
+}
+
+@media (min-width: 50em) {
+  .section__summary p {
+    font-size: 1.25em;
+  }
+}
+@media (min-width: 68.75em) {
+  .section__summary p {
+    font-size: 1.35em;
+  }
+}
+.section__summary p:first-child {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+
+@media (min-width: 37.5em) {
+  .section__summary p:first-child {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 50em) {
+  .section__summary p:first-child {
+    font-size: 1.875em;
+  }
+}
+.energy .section__summary {
+  background-color: #f6ebd6;
+  color: #af6601;
+}
+
+.transportation .section__summary {
+  background-color: #e3ebf4;
+  color: #46515e;
+}
+
+.water .section__summary {
+  background-color: #c7e9f4;
+  color: #096788;
+}
+
+.public-health .section__summary {
+  background-color: #f8d8d8;
+  color: #7e2323;
+}
+
+.ocean-and-coastal-resources .section__summary {
+  background-color: #c8f2f4;
+  color: #185d60;
+}
+
+.section__pdf-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1em;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: calc(100% - 1em);
+  /* Colors */
+}
+
+@media (min-width: 37.5em) {
+  .section__pdf-button {
+    /* 500px */
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 20em;
+  }
+}
+.section__pdf-button-wrapper {
+  text-align: center;
+  margin-bottom: 3em;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (min-width: 31.25em) {
+  .section__pdf-button-wrapper {
+    /* 500px */
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+.section__pdf-button img {
+  display: block;
+  max-width: 5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__pdf-button p {
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+.section__pdf-button p span {
+  display: block;
+  font-weight: bold;
+}
+
+.section__pdf-button--full {
+  background-color: #3e3d3f;
+  color: #fff;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 31.25em) {
+  .section__pdf-button--full {
+    /* 500px */
+    margin-bottom: 0;
+  }
+}
+.section__pdf-button--full:hover {
+  background-color: #111;
+}
+
+.section__pdf-button--section {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.section__pdf-button--section p {
+  font-size: 1em;
+}
+
+.section__pdf-button--section img {
+  max-width: 4em;
+  padding-top: 0.5em;
+}
+
+.energy .section__pdf-button--section {
+  border-color: #f6ad2c;
+  color: #dd920d;
+}
+
+.energy .section__pdf-button--section:hover {
+  background-color: #f6ebd6;
+  border-color: #f6ebd6;
+}
+
+.transportation .section__pdf-button--section {
+  border-color: #8b929b;
+  color: #8b929b;
+}
+
+.transportation .section__pdf-button--section:hover {
+  background-color: #e3ebf4;
+  border-color: #e3ebf4;
+}
+
+.water .section__pdf-button--section {
+  border-color: #2ea3d5;
+  color: #2ea3d5;
+}
+
+.water .section__pdf-button--section:hover {
+  background-color: #c7e9f4;
+  border-color: #c7e9f4;
+}
+
+.public-health .section__pdf-button--section {
+  border-color: #e75757;
+  color: #e75757;
+}
+
+.public-health .section__pdf-button--section:hover {
+  background-color: #f8d8d8;
+  border-color: #f8d8d8;
+}
+
+.ocean-and-coastal-resources .section__pdf-button--section {
+  border-color: #2db0b7;
+  color: #2db0b7;
+}
+
+.ocean-and-coastal-resources .section__pdf-button--section:hover {
+  background-color: #c8f2f4;
+  border-color: #c8f2f4;
+}
+
+/* Infographics */
+.section__infographics-wrapper {
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+}
+
+.energy .section__infographics-wrapper {
+  background: linear-gradient(to bottom, #fff 0%, #f6ca7b 100%);
+  color: #af6601;
+}
+
+.transportation .section__infographics-wrapper {
+  background: linear-gradient(to bottom, #fff 0%, #9ea7b2 100%);
+  color: #46515e;
+}
+
+.water .section__infographics-wrapper {
+  background: linear-gradient(to bottom, #fff 0%, #4bbce4 100%);
+  color: #096788;
+}
+
+.public-health .section__infographics-wrapper {
+  background: linear-gradient(to bottom, #fff 0%, #ec7878 100%);
+  color: #7e2323;
+}
+
+.ocean-and-coastal-resources .section__infographics-wrapper {
+  background: linear-gradient(to bottom, #fff 0%, #41ccd3 100%);
+  color: #185d60;
+}
+
+.section__infographic-item {
+  max-width: 25em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 37.5em) {
+  .section__infographic-item {
+    max-width: none;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 6em;
+  }
+}
+@media (min-width: 50em) {
+  .section__infographic-item {
+    max-width: 78em;
+  }
+}
+@media (min-width: 37.5em) {
+  .section__infographic-item > * {
+    width: 50%;
+  }
+}
+.section__infographic-item:first-child {
+  margin-top: 2em;
+}
+
+@media (min-width: 37.5em) {
+  .section__infographic-item:nth-of-type(odd) figcaption {
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+    padding-right: 3em;
+  }
+}
+@media (min-width: 37.5em) {
+  .section__infographic-item:nth-of-type(even) figcaption {
+    padding-left: 3em;
+  }
+}
+.section__infographic-image {
+  margin-bottom: 3em;
+  max-height: 15em;
+}
+
+.section__infographic-image--is-tall {
+  min-height: 20em;
+}
+
+@media (min-width: 37.5em) {
+  .section__infographic-image {
+    margin-bottom: 0;
+    max-height: 25em;
+  }
+  .section__infographic-image--is-tall {
+    min-height: 35em;
+  }
+}
+.section__infographic-text {
+  margin-bottom: 6em;
+}
+
+@media (min-width: 37.5em) {
+  .section__infographic-text {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 50em) {
+  .section__infographic-text {
+    max-width: 26em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.section__infographic-text p {
+  line-height: 1.4;
+}
+
+@media (min-width: 50em) {
+  .section__infographic-text p {
+    font-size: 1.125em;
+  }
+}
+@media (min-width: 68.75em) {
+  .section__infographic-text p {
+    font-size: 1.25em;
+  }
+}
+/* Accordions */
+.section__accordion {
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  padding: 0 1em 1em;
+}
+
+@media (min-width: 37.5em) {
+  .section__accordion {
+    margin-left: 2em;
+  }
+}
+@media (min-width: 50em) {
+  .section__accordion {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 0 2em 2em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50em;
+  }
+}
+.section__accordion-wrapper {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  /* Colors */
+}
+
+.energy .section__accordion-wrapper {
+  border-color: #dd920d;
+}
+
+.transportation .section__accordion-wrapper {
+  border-color: #6d7887;
+}
+
+.water .section__accordion-wrapper {
+  border-color: #1f8aa7;
+}
+
+.public-health .section__accordion-wrapper {
+  border-color: #c03535;
+}
+
+.ocean-and-coastal-resources .section__accordion-wrapper {
+  border-color: #259096;
+}
+
+.section__accordion__header {
+  /* Colors */
+}
+
+.energy .section__accordion__header {
+  color: #af6601;
+}
+
+.transportation .section__accordion__header {
+  color: #46515e;
+}
+
+.water .section__accordion__header {
+  color: #096788;
+}
+
+.public-health .section__accordion__header {
+  color: #7e2323;
+}
+
+.ocean-and-coastal-resources .section__accordion__header {
+  color: #185d60;
+}
+
+.section__accordion__header h2 {
+  font-size: 1.25em;
+  font-weight: bold;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  cursor: pointer;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+@media (min-width: 37.5em) {
+  .section__accordion__header h2 {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 50em) {
+  .section__accordion__header h2 {
+    font-size: 1.5em;
+  }
+}
+.section__accordion__header h2:hover {
+  -webkit-transform: translateX(0.25em);
+  -ms-transform: translateX(0.25em);
+  transform: translateX(0.25em);
+}
+
+@media (min-width: 25em) {
+  .section__accordion__header h2:hover {
+    -webkit-transform: translateX(0.5em);
+    -ms-transform: translateX(0.5em);
+    transform: translateX(0.5em);
+  }
+}
+.section__accordion__header h2 .goal-wrapper {
+  display: block;
+}
+
+@media (min-width: 37.5em) {
+  .section__accordion__header h2 .goal-wrapper {
+    width: 80%;
+  }
+}
+.section__accordion__header .read-more {
+  display: block;
+  width: 100%;
+  font-size: 0.8em;
+  font-weight: normal;
+  opacity: 0.8;
+  padding-top: 0.5em;
+  transition: opacity 0.2s ease;
+}
+
+@media (min-width: 37.5em) {
+  .section__accordion__header .read-more {
+    margin-left: calc(20% - 1.875em);
+  }
+}
+.section__accordion__goal-tag {
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  /* Colors */
+}
+
+.energy .section__accordion__goal-tag {
+  color: #dd920d;
+}
+
+.transportation .section__accordion__goal-tag {
+  color: #6d7887;
+}
+
+.water .section__accordion__goal-tag {
+  color: #1f8aa7;
+}
+
+.public-health .section__accordion__goal-tag {
+  color: #c03535;
+}
+
+.ocean-and-coastal-resources .section__accordion__goal-tag {
+  color: #259096;
+}
+
+.section__accordion__arrow {
+  margin-left: -1.5em;
+  /* Colors */
+}
+
+@media (min-width: 37.5em) {
+  .section__accordion__arrow {
+    width: 20%;
+  }
+}
+.energy .section__accordion__arrow {
+  color: #dd920d;
+}
+
+.transportation .section__accordion__arrow {
+  color: #6d7887;
+}
+
+.water .section__accordion__arrow {
+  color: #1f8aa7;
+}
+
+.public-health .section__accordion__arrow {
+  color: #c03535;
+}
+
+.ocean-and-coastal-resources .section__accordion__arrow {
+  color: #259096;
+}
+
+.section__accordion__arrow:before {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.section__accordion__content {
+  padding-left: 1em;
+  padding-right: 1em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 1.125em;
+  /* Colors */
+}
+
+@media (min-width: 50em) {
+  .section__accordion__content {
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.25em;
+  }
+}
+.energy .section__accordion__content {
+  color: #af6601;
+}
+
+.transportation .section__accordion__content {
+  color: #46515e;
+}
+
+.water .section__accordion__content {
+  color: #096788;
+}
+
+.public-health .section__accordion__content {
+  color: #7e2323;
+}
+
+.ocean-and-coastal-resources .section__accordion__content {
+  color: #185d60;
+}
+
+.section__accordion__content li {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 37.5em) {
+  .section__accordion__content li {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+.section__accordion__content li:first-child {
+  margin-top: 0;
+}
+
+.section__accordion__content > li > p {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 37.5em) {
+  .section__accordion__content span {
+    width: 20%;
+  }
+}
+@media (min-width: 37.5em) {
+  .section__accordion__content p {
+    width: 80%;
+  }
+}
+.section__accordion__content a {
+  text-decoration: none;
+  position: relative;
+  transition: background-color 0.3s ease;
+  /* Colors */
+}
+
+.energy .section__accordion__content a {
+  color: #af6601;
+}
+
+.transportation .section__accordion__content a {
+  color: #46515e;
+}
+
+.water .section__accordion__content a {
+  color: #096788;
+}
+
+.public-health .section__accordion__content a {
+  color: #7e2323;
+}
+
+.ocean-and-coastal-resources .section__accordion__content a {
+  color: #185d60;
+}
+
+.section__accordion__content a:hover {
+  background-color: rgba(51, 61, 153, 0.2);
+}
+
+.section__accordion__content a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  border-bottom: 5px solid rgba(51, 61, 153, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+.section__accordion__content a:hover:after {
+  border-bottom: 5px solid transparent;
+}
+
+.section__accordion__actions {
+  margin-left: 1.5em;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+@media (min-width: 37.5em) {
+  .section__accordion__actions {
+    margin-left: 6.5em;
+  }
+}
+@media (min-width: 50em) {
+  .section__accordion__actions {
+    margin-left: 7.35em;
+  }
+}
+.section__accordion__arrow.icon-right-dir:before {
+  margin-right: 0;
+}
+
+.section__accordion--no-strategies .section__accordion__header h2 {
+  cursor: auto;
+}
+
+.section__accordion--no-strategies .section__accordion__header h2:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.section__accordion--no-strategies .section__accordion__arrow.icon-right-dir:before {
+  opacity: 0;
+}
+
+.accordion-open .section__accordion__header h2 {
+  -webkit-transform: translateX(0.5em);
+  -ms-transform: translateX(0.5em);
+  transform: translateX(0.5em);
+  /*@media (min-width: $small) {
+  	transform: translateX(1.5em);
+  }*/
+}
+
+.accordion-open .section__accordion__header .read-more {
+  opacity: 0;
+}
+
+.accordion-open .section__accordion__arrow:before {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.accordion-open .section__accordion__content {
+  opacity: 1;
+}
+
+/* 
+ *
+ * 4./  Other Pages
+------------------------------------------------*/
+.about .section__header,
+.state-of-the-region .section__header,
+.finance .section__header,
+.contact .section__header,
+.credits .section__header,
+.download-report .section__header,
+.error404 .section__header,
+.search .section__header,
+.strategic-growth-council-acknowledgement-and-disclaimer .section__header {
+  background-color: #3e3d3f;
+  color: #fff;
+}
+
+.about .page,
+.state-of-the-region .page,
+.finance .page,
+.contact .page,
+.credits .page,
+.download-report .page,
+.search .page,
+.error404 .page,
+.strategic-growth-council-acknowledgement-and-disclaimer .page {
+  background: #eee;
+}
+
+.about .page__content,
+.state-of-the-region .page__content,
+.finance .page__content,
+.contact .page__content,
+.credits .page__content,
+.download-report .page__content,
+.search .page__content,
+.error404 .page__content,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content {
+  color: #3e3d3f;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
+
+@media (min-width: 50em) {
+  .about .page__content,
+  .state-of-the-region .page__content,
+  .finance .page__content,
+  .contact .page__content,
+  .credits .page__content,
+  .download-report .page__content,
+  .search .page__content,
+  .error404 .page__content,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content {
+    max-width: 55em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.about .page__content p,
+.state-of-the-region .page__content p,
+.finance .page__content p,
+.contact .page__content p,
+.credits .page__content p,
+.download-report .page__content p,
+.search .page__content p,
+.error404 .page__content p,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content p {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 37.5em) {
+  .about .page__content p,
+  .state-of-the-region .page__content p,
+  .finance .page__content p,
+  .contact .page__content p,
+  .credits .page__content p,
+  .download-report .page__content p,
+  .search .page__content p,
+  .error404 .page__content p,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content p {
+    font-size: 1.25em;
+  }
+}
+@media (min-width: 50em) {
+  .about .page__content p,
+  .state-of-the-region .page__content p,
+  .finance .page__content p,
+  .contact .page__content p,
+  .credits .page__content p,
+  .download-report .page__content p,
+  .search .page__content p,
+  .error404 .page__content p,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content p {
+    font-size: 1.35em;
+  }
+}
+.about .page__content a,
+.state-of-the-region .page__content a,
+.finance .page__content a,
+.contact .page__content a,
+.credits .page__content a,
+.download-report .page__content a,
+.search .page__content a,
+.error404 .page__content a,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content a {
+  color: #3e3d3f;
+  text-decoration: none;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.about .page__content a:hover,
+.state-of-the-region .page__content a:hover,
+.finance .page__content a:hover,
+.contact .page__content a:hover,
+.credits .page__content a:hover,
+.download-report .page__content a:hover,
+.search .page__content a:hover,
+.error404 .page__content a:hover,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content a:hover {
+  background-color: rgba(51, 61, 153, 0.2);
+}
+
+.about .page__content a:after,
+.state-of-the-region .page__content a:after,
+.finance .page__content a:after,
+.contact .page__content a:after,
+.credits .page__content a:after,
+.download-report .page__content a:after,
+.search .page__content a:after,
+.error404 .page__content a:after,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 1px;
+  border-bottom: 5px solid rgba(51, 61, 153, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+.about .page__content a:hover:after,
+.state-of-the-region .page__content a:hover:after,
+.finance .page__content a:hover:after,
+.contact .page__content a:hover:after,
+.credits .page__content a:hover:after,
+.download-report .page__content a:hover:after,
+.search .page__content a:hover:after,
+.error404 .page__content a:hover:after,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content a:hover:after {
+  border-bottom: 5px solid transparent;
+}
+
+.about .page__content ul,
+.state-of-the-region .page__content ul,
+.finance .page__content ul,
+.contact .page__content ul,
+.credits .page__content ul,
+.download-report .page__content ul,
+.search .page__content ul,
+.error404 .page__content ul,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content ul {
+  list-style-type: disc;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 37.5em) {
+  .about .page__content ul,
+  .state-of-the-region .page__content ul,
+  .finance .page__content ul,
+  .contact .page__content ul,
+  .credits .page__content ul,
+  .download-report .page__content ul,
+  .search .page__content ul,
+  .error404 .page__content ul,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content ul {
+    margin-left: 1.25em;
+  }
+}
+@media (min-width: 50em) {
+  .about .page__content ul,
+  .state-of-the-region .page__content ul,
+  .finance .page__content ul,
+  .contact .page__content ul,
+  .credits .page__content ul,
+  .download-report .page__content ul,
+  .search .page__content ul,
+  .error404 .page__content ul,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content ul {
+    margin-left: 1.5em;
+  }
+}
+@media (min-width: 37.5em) {
+  .about .page__content li,
+  .state-of-the-region .page__content li,
+  .finance .page__content li,
+  .contact .page__content li,
+  .credits .page__content li,
+  .download-report .page__content li,
+  .search .page__content li,
+  .error404 .page__content li,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content li {
+    font-size: 1.25em;
+  }
+}
+@media (min-width: 50em) {
+  .about .page__content li,
+  .state-of-the-region .page__content li,
+  .finance .page__content li,
+  .contact .page__content li,
+  .credits .page__content li,
+  .download-report .page__content li,
+  .search .page__content li,
+  .error404 .page__content li,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content li {
+    font-size: 1.35em;
+  }
+}
+.about .page__content ol,
+.state-of-the-region .page__content ol,
+.finance .page__content ol,
+.contact .page__content ol,
+.credits .page__content ol,
+.download-report .page__content ol,
+.search .page__content ol,
+.error404 .page__content ol,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content ol {
+  list-style-type: decimal;
+  margin-left: 1em;
+}
+
+@media (min-width: 37.5em) {
+  .about .page__content ol,
+  .state-of-the-region .page__content ol,
+  .finance .page__content ol,
+  .contact .page__content ol,
+  .credits .page__content ol,
+  .download-report .page__content ol,
+  .search .page__content ol,
+  .error404 .page__content ol,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content ol {
+    margin-left: 1.25em;
+  }
+}
+@media (min-width: 50em) {
+  .about .page__content ol,
+  .state-of-the-region .page__content ol,
+  .finance .page__content ol,
+  .contact .page__content ol,
+  .credits .page__content ol,
+  .download-report .page__content ol,
+  .search .page__content ol,
+  .error404 .page__content ol,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content ol {
+    margin-left: 1.5em;
+  }
+}
+.about .page__content ol li,
+.state-of-the-region .page__content ol li,
+.finance .page__content ol li,
+.contact .page__content ol li,
+.credits .page__content ol li,
+.download-report .page__content ol li,
+.search .page__content ol li,
+.error404 .page__content ol li,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content ol li {
+  margin-bottom: 1em;
+}
+
+.about .page__content ol ol,
+.state-of-the-region .page__content ol ol,
+.finance .page__content ol ol,
+.contact .page__content ol ol,
+.credits .page__content ol ol,
+.download-report .page__content ol ol,
+.search .page__content ol ol,
+.error404 .page__content ol ol,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content ol ol {
+  list-style-type: lower-roman;
+}
+
+.about .page__content ol ol li,
+.state-of-the-region .page__content ol ol li,
+.finance .page__content ol ol li,
+.contact .page__content ol ol li,
+.credits .page__content ol ol li,
+.download-report .page__content ol ol li,
+.search .page__content ol ol li,
+.error404 .page__content ol ol li,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content ol ol li {
+  font-size: 1em;
+}
+
+.about .page__content h2,
+.state-of-the-region .page__content h2,
+.finance .page__content h2,
+.contact .page__content h2,
+.credits .page__content h2,
+.download-report .page__content h2,
+.search .page__content h2,
+.error404 .page__content h2,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5em;
+  line-height: 1.2;
+  margin-top: 1.75em;
+  margin-bottom: 0.75em;
+  color: #333d99;
+}
+
+@media (min-width: 37.5em) {
+  .about .page__content h2,
+  .state-of-the-region .page__content h2,
+  .finance .page__content h2,
+  .contact .page__content h2,
+  .credits .page__content h2,
+  .download-report .page__content h2,
+  .search .page__content h2,
+  .error404 .page__content h2,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content h2 {
+    font-size: 1.75em;
+  }
+}
+@media (min-width: 50em) {
+  .about .page__content h2,
+  .state-of-the-region .page__content h2,
+  .finance .page__content h2,
+  .contact .page__content h2,
+  .credits .page__content h2,
+  .download-report .page__content h2,
+  .search .page__content h2,
+  .error404 .page__content h2,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content h2 {
+    font-size: 2em;
+  }
+}
+.about .page__content h3,
+.state-of-the-region .page__content h3,
+.finance .page__content h3,
+.contact .page__content h3,
+.credits .page__content h3,
+.download-report .page__content h3,
+.search .page__content h3,
+.error404 .page__content h3,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333d99;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 37.5em) {
+  .about .page__content h3,
+  .state-of-the-region .page__content h3,
+  .finance .page__content h3,
+  .contact .page__content h3,
+  .credits .page__content h3,
+  .download-report .page__content h3,
+  .search .page__content h3,
+  .error404 .page__content h3,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content h3 {
+    font-size: 1.35em;
+  }
+}
+@media (min-width: 50em) {
+  .about .page__content h3,
+  .state-of-the-region .page__content h3,
+  .finance .page__content h3,
+  .contact .page__content h3,
+  .credits .page__content h3,
+  .download-report .page__content h3,
+  .search .page__content h3,
+  .error404 .page__content h3,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content h3 {
+    font-size: 1.5em;
+  }
+}
+.about .page__content h4,
+.state-of-the-region .page__content h4,
+.finance .page__content h4,
+.contact .page__content h4,
+.credits .page__content h4,
+.download-report .page__content h4,
+.search .page__content h4,
+.error404 .page__content h4,
+.strategic-growth-council-acknowledgement-and-disclaimer .page__content h4 {
+  font-size: 1.25em;
+  font-style: italic;
+  margin-bottom: 0.5em;
+  color: #333d99;
+}
+
+@media (min-width: 37.5em) {
+  .about .page__content h4,
+  .state-of-the-region .page__content h4,
+  .finance .page__content h4,
+  .contact .page__content h4,
+  .credits .page__content h4,
+  .download-report .page__content h4,
+  .search .page__content h4,
+  .error404 .page__content h4,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content h4 {
+    font-size: 1.35em;
+  }
+}
+@media (min-width: 50em) {
+  .about .page__content h4,
+  .state-of-the-region .page__content h4,
+  .finance .page__content h4,
+  .contact .page__content h4,
+  .credits .page__content h4,
+  .download-report .page__content h4,
+  .search .page__content h4,
+  .error404 .page__content h4,
+  .strategic-growth-council-acknowledgement-and-disclaimer .page__content h4 {
+    font-size: 1.5em;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
